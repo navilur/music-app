@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <title>Music App</title>
+</head>
+
+<body>
+    <div class="main">
+        <p id="logo"><i class="fas fa-music" aria-hidden="true"></i> Music</p>
+
+        <!-- left part -->
+        <div class="left">
+            <!-- song image -->
+            <img id="track_image">
+
+            <div class="volume">
+                <p id="volume_show">70</p>
+                <i class="fas fa-volume-up" aria-hidden="true" id="volume_icon" onclick="mute_sound()"></i>
+                <input type="range" min="0" max="100" value="70" onchange="volume_change()" id="volume">
+            </div>
+        </div>
+
+        <!-- right part -->
+        <div class="right">
+            <div class="show_song_no">
+                <p id="present">1</p>
+                <p>/</p>
+                <p id="total">6</p>
+            </div>
+
+            <p id="title">title.mp3</p>
+            <p id="artist">Artist name</p>
+
+            <!-- middle part -->
+            <div class="middle">
+                <button onclick="previous_song()" id="pre"><i class="fas fa-backward" aria-hidden="true"></i></button>
+                <button onclick="justplay()" id="play"><i class="fas fa-play" aria-hidden="true"></i></button>
+                <button onclick="next_song()" id="next"><i class="fas fa-forward" aria-hidden="true"></i></button>
+            </div>
+
+            <!-- song duration part -->
+            <div class="duration">
+                <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration()">
+            </div>
+            <button id="auto" onclick="autoplay_switch()">Auto Play <i class="fas fa-circle-notch"
+                aria-hidden="true"></i></button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
